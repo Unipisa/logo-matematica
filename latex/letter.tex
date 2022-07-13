@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Long letter, adapted from
+%  https://it.overleaf.com/latex/templates/nju-cover-letter-template-nan-da-tou-gao-xin-mo-ban/tkdpzmwxvksw
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+%
+% Configurazione della lettera 
+%
+\newcommand{\nome}{Nome}
+\newcommand{\cognome}{Cognome}
+\newcommand{\email}{nome.cognome@unipi.it}
+
+
+\usepackage{charter} % Use the Charter font
+
+\usepackage[
+	a4paper, % Paper size
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	left=1in, % Left margin
+	right=1in, % Right margin
+	%showframe % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+
+\setlength{\parindent}{0pt} % Paragraph indentation
+\setlength{\parskip}{1em} % Vertical space between paragraphs
+
+\usepackage{graphicx} % Required for including images
+\usepackage{lipsum}  
+\usepackage{fancyhdr} % Required for customizing headers and footers
+
+\fancypagestyle{firstpage}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header rule
+	\renewcommand{\footrulewidth}{.5pt} % Footer rule thickness
+}
+
+\fancypagestyle{subsequentpages}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{.5pt} % Header rule thickness
+	\renewcommand{\footrulewidth}{.5pt} % Footer rule thickness
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use the first page headers/footers style on the first page
+\pagestyle{subsequentpages} % Use the subsequent pages headers/footers style on subsequent pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	FIRST PAGE HEADER
+%----------------------------------------------------------------------------------------
+
+\includegraphics[width=0.35\textwidth]{matematica-dx-blu.eps}
+\hfill 
+\includegraphics[width=0.35\textwidth]{marchio_unipi_orizz_pant541.eps}
+
+\vspace{-1em} % Pull the rule closer to the logo
+
+\rule{\linewidth}{.5pt} % Horizontal rule
+
+\bigskip\bigskip % Vertical whitespace
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\hfill
+\begin{tabular}{l @{}}
+\hfill \today \bigskip\\ % Date 
+\hfill \nome\ \cognome \\
+\hfill Email: \email \\
+\hfill L.go Bruno Pontecorvo, 5 \\
+\hfill 56127 Pisa (PI), Italy \\
+\end{tabular}
+
+\bigskip % Vertical whitespace
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE AND GREETING
+%----------------------------------------------------------------------------------------
+
+\begin{tabular}{@{} l}
+	Professor\ John Smith, \\
+	77 Massachusetts Avenue, \\
+    Cambridge, MA 02139, USA
+\end{tabular}
+
+\bigskip
+
+Dear Prof.\ Smith,
+
+\bigskip
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\lipsum[1-2]
+
+\bigskip % Vertical whitespace
+
+Sincerely yours,
+
+\vspace{20pt} % Vertical whitespace
+
+\nome\ \cognome\\ 
+Department of Mathematics, \\
+University of Pisa. 
+
+\end{document}
